@@ -1,0 +1,15 @@
+
+body{
+    margin: 0;
+    background-color: #5a5a5a;
+    color: yellow;
+    font-family: 'Century Gothic';
+    font-size: 30px;
+}
+a{
+    text-decoration: none;
+    color: yellow;
+}
+.header_img{
+    width: 90px;
+}
