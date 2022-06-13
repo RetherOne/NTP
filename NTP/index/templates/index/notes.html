@@ -9,11 +9,15 @@
     <li><a href="#2">Два</a>
     <li><a href="#3">Три</a>
     <li><a href="#4">Четыре</a>
-    <li><a href="#5">Пять</a>
+    <li><a href="/admin/">admin</a>
 {% endblock %}
 
 
 {% block body %}
 <h1 class="title">ЗАМЕТКИ</h1>
-<p class="context">a sock soc ksockfjhfjhfjhvjhvj hvjhvjhvjhvkljfklyjf ljhvkufljhljhvljhluljhvjhsocksocksocks ocksocksocksocksocksgyjgjgyjgmokcsok csokcsokcskcsocksocksocskcoskcoskcoskcoskcskc</p>
+<div class="content">
+    {% for el in con %}
+       <p class="elem_c">{{ el.contents }}<br></p>
+    {% endfor %}
+</div
 {% endblock %}
