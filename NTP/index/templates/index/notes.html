@@ -1,12 +1,12 @@
 {% extends 'index/index.html' %}
 
 
-{% block title %}Заметки{% endblock %}
+{% block title %}{{ title }}{% endblock %}
 
 
 {% block link %}
-    <li><a href="">NOTES</a>
-    <li><a href="#2">Два</a>
+    <li><a href="{% url 'index' %}">Главная</a>
+    <li><a href="">Заметки</a>
     <li><a href="#3">Три</a>
     <li><a href="#4">Четыре</a>
     <li><a href="/admin/">admin</a>
@@ -14,10 +14,13 @@
 
 
 {% block body %}
-<h1 class="title">ЗАМЕТКИ</h1>
+<h1 class="title">{{ title }}</h1>
 <div class="content">
-    {% for el in con %}
-       <p class="elem_c">{{ el.contents }}<br></p>
+    {% for el in all %}
+        <p class="elem_c">
+            {{ el.title }}<br>
+            {{ el.contents }}<br>
+        </p>
     {% endfor %}
-</div
+</div>
 {% endblock %}
