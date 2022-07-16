@@ -2,7 +2,6 @@
 
 {% block title %}{{ title }}{% endblock %}
 
-
 {% block link %}
     <li><a href="{% url 'index' %}">Главная</a>
     <li><a href="">Заметки</a>
@@ -11,17 +10,15 @@
     <li><a href="/admin/">admin</a>
 {% endblock %}
 
-
 {% block body %}
-<h1 class="title">{{ title }}</h1>
-<div class="content">
-    {% for el in all %}
-        <p class="elem_c">
-            {{ el.title }}<br>
-            {{ el.contents }}<br>
-            {{ el.datatime }}<br>
-        </p>
-    {% endfor %}
-    <a href="{% url 'add_notes' %}"><button>Add Notes</button></a>
-</div>
+    <h1 class="title">{{ title }}</h1>
+    <div class="content">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.title }}<br>
+            {{ form.contents }}<br>
+            {{ form.datatime }}<br>
+            <button type="submit">Добавить заметку</button>
+        </form>
+    </div>
 {% endblock %}
